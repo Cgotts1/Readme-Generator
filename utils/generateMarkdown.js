@@ -12,7 +12,7 @@ function renderLicenseBadge(license) {
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
   if(license === true){
-    return "![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)"
+    return " "
   } else {
     return " "
   }
@@ -32,11 +32,20 @@ function renderLicenseSection(license) {
 function generateMarkdown(data) {
   return `# ${data.title}
 
-## ${data.usage}
-## ${data.credits}
-## ${data.license}
+
 
 `;
 }
 
 module.exports = generateMarkdown;
+
+
+
+
+
+//  ${data.usage}
+//  ${data.credits}
+//  ${data.license}
+
+
+// ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
