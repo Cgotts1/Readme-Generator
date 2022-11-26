@@ -2,28 +2,12 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 
 
-const getFile = require('./generateMarkdown')
+// const getFile = require('./generateMarkdown')
 
-getFile
+// getFile
 
 
 const questions = [
-  {
-    type: "input",
-    message: "What is your favorite color?",
-    name: "color",
-  },
-  {
-    type: "confirm",
-    message: "Do you like sushi?",
-    name: "sushi",
-  },
-  {
-    type: "list",
-    message: "Kind of pasta",
-    name: "pasta",
-    choices: ["carbonara", "red sauce", "alfredo", "macaroni"],
-  },
   {
       type: 'input',
       message: 'What is your Github username?',
@@ -74,9 +58,9 @@ const questions = [
 
 inquirer.prompt(questions).then((answers) => {
   const template = `
-        <div>
-            <p>Github Username: ${answers.username}</p>
-            <p>Email Address: ${answers.address}</p>
+        
+# Github Username: ${answers.username}
+## Email Address: ${answers.address}
             <p>Project Name: ${answers.project}</p>
             <p>Project Description: ${answers.description}</p>
             <p>License: ${answers.license}</p>
@@ -85,10 +69,11 @@ inquirer.prompt(questions).then((answers) => {
             <p>Using the Repo: ${answers.using}</p>
             <p>Contributing to the Repo: ${answers.contributing}</p>
 
-        </div>
+        
     `;
 
   fs.writeFile("./README.md", template, () => {
     console.log("Generating README...");
   });
 });
+// gjgjg
