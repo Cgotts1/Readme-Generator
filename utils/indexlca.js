@@ -75,8 +75,8 @@ const questions = [
 inquirer.prompt(questions).then((answers) => {
   const template = `
         <div>
-            <p>Github Username: ${answers.username}</p>
-            <p>Email Address: ${answers.address}</p>
+            ## Github Username: ${answers.username}</p>
+            ## Email Address: ${answers.address}</p>
             <p>Project Name: ${answers.project}</p>
             <p>Project Description: ${answers.description}</p>
             <p>License: ${answers.license}</p>
