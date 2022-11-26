@@ -61,13 +61,13 @@ inquirer.prompt(questions).then((answers) => {
         
 # Github Username: ${answers.username}
 ## Email Address: ${answers.address}
-            <p>Project Name: ${answers.project}</p>
-            <p>Project Description: ${answers.description}</p>
-            <p>License: ${answers.license}</p>
-            <p>Command to Install Dependencies: ${answers.npmi}</p>
-            <p>Command to Run Tests: ${answers.npmtest}</p>
-            <p>Using the Repo: ${answers.using}</p>
-            <p>Contributing to the Repo: ${answers.contributing}</p>
+## Project Name: ${answers.project}
+## Project Description: ${answers.description}
+## License: ${answers.license}
+## Command to Install Dependencies: ${answers.npmi}
+## Command to Run Tests: ${answers.npmtest}
+## Using the Repo: ${answers.using}
+## Contributing to the Repo: ${answers.contributing}
 
         
     `;
