@@ -54,6 +54,8 @@ const questions = [
   },
 ];
 
+
+
 inquirer.prompt(questions).then((answers) => {
   const template = 
 `# ${answers.project}
@@ -62,8 +64,8 @@ inquirer.prompt(questions).then((answers) => {
 ${answers.description}
 
 ## Table of Contents
-1.) <a href = "#Installation">Installation</a> <br>
-2.) <a href = "#Description">Description</a><br>
+1.) <a href = "#Description">Description</a><br>
+2.) <a href = "#Installation">Installation</a> <br>
 3.) <a href = "#Usage">Usage</a><br>
 4.) <a href = "#Contributing">Contributing</a><br>
 5.) <a href = "#Tests">Tests</a><br>
@@ -83,7 +85,7 @@ Contributing to the Repo: ${answers.contributing}
 Command to Run Tests: ${answers.npmtest}
 
 ## Questions  <section id = "Questions"></section>
-If you have any questions, please feel free to contact me: <br>
+If you have any questions, please feel free to contact me: <br><br>
 1.) Github Username: ${answers.username} <br>
 2.) Email Address: ${answers.address}`;
 
