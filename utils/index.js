@@ -34,12 +34,12 @@ const questions = [
   },
   {
     type: "input",
-    message: "What command should be run to install dependencies?", //Needs answer
+    message: "What command should be run to install dependencies?", 
     name: "npmi",
   },
   {
     type: "input",
-    message: "What command should be run to run tests?", //Needs answer
+    message: "What command should be run to run tests?", 
     name: "npmtest",
   },
   {
@@ -83,9 +83,9 @@ Contributing to the Repo: ${answers.contributing}
 Command to Run Tests: ${answers.npmtest}
 
 ## Questions  <section id = "Questions"></section>
-If you have any questions, please feel free to contact me:
-Github Username: ${answers.username}
-Email Address: ${answers.address}`;
+If you have any questions, please feel free to contact me: <br>
+1.) Github Username: ${answers.username} <br>
+2.) Email Address: ${answers.address}`;
 
   fs.writeFile("./README.md", template, () => {
     console.log("Generating README...");
