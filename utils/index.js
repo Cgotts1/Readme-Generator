@@ -62,11 +62,18 @@ inquirer.prompt(questions).then((answers) => {
 ${answers.description}
 
 ## Table of Contents
+<a href = "#Installation">Installation</a>
+<a href = "#Description">Description</a>
+<a href = "#Usage">Usage</a>
+<a href = "#Contributing">Contributing</a>
+<a href = "#Tests">Tests</a>
+<a href = "#Questions">Questions</a>
 
-## Installation
+
+## Installation <section id = "Installation"></section>
 Command to Install Dependencies: ${answers.npmi}
 
-## Usage
+## Usage <section id = "Usage"></section>
 Using the Repo: ${answers.using}
 
 ## Contributing
@@ -75,7 +82,7 @@ Contributing to the Repo: ${answers.contributing}
 ## Tests
 Command to Run Tests: ${answers.npmtest}
 
-## Questions
+## Questions  <section id = "Questions"></section>
 If you have any questions, please feel free to contact me:
 Github Username: ${answers.username}
 Email Address: ${answers.address}`;
