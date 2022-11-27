@@ -1,138 +1,101 @@
-// TODO: Include packages needed for this application
-const inquirer = require('inquirer');
-// TODO: Create an array of questions for user input
-const questions = [ 
+const inquirer = require("inquirer");
+const fs = require("fs");
 
-    {
-      type: 'input',
-      message: 'How many bones are in the adult human body?',
-      name: 'bones',
-    },
-    // {
-    //   type: 'input',
-    //   message: 'What is your Github username?',
-    //   name: 'bones',
-    // },
-    // {
-      //   type: 'input',
-      //   message: 'What is your email address?',
-      //   name: 'bones',
-      // },
-    // {
-    //   type: 'input',
-    //   message: 'What is your project name?',
-    //   name: 'bones',
-    // },
-    // {
-    //   type: 'input',
-    //   message: 'Please write a short description of your project.',
-    //   name: 'bones',
-    // },
-    // {
-    //   type: 'input',
-    //   message: 'What kind of license should your project have?',
-    //   name: 'bones',
-    // },
-    // {
-    //   type: 'input',
-    //   message: 'What command should be run to install dependencies?',
-    //   name: 'bones',
-    // },
-    // {
-    //   type: 'input',
-    //   message: 'What command should be run to run tests?',
-    //   name: 'bones',
-    // },
-    // {
-    //   type: 'input',
-    //   message: 'What does the user need to know about using the repo?',
-    //   name: 'bones',
-    // },
-    // {
-    //   type: 'input',
-    //   message: 'What does the user need to know about contributing to the repo?',
-    //   name: 'bones',
-    // },
-  ]
+// const getFile = require('./generateMarkdown')
 
-// TODO: Create a function to write README file
-// function writeToFile(fileName, data) {}
+// getFile
 
-// TODO: Create a function to initialize app
-function init() {}
+const questions = [
+  {
+    type: "input",
+    message: "What is your Github username?",
+    name: "username",
+  },
+  {
+    type: "input",
+    message: "What is your email address?",
+    name: "address",
+  },
+  {
+    type: "input",
+    message: "What is your project name?",
+    name: "project",
+  },
+  {
+    type: "input",
+    message: "Please write a short description of your project.",
+    name: "description",
+  },
+  {
+    type: "list",
+    message: "What kind of license should your project have?",
+    name: "license",
+    choices: ["MIT", "APACHE 2.0", "GPL 3.0", "BSD 3", "None"],
+  },
+  {
+    type: "input",
+    message: "What command should be run to install dependencies?", //Needs answer
+    name: "npmi",
+  },
+  {
+    type: "input",
+    message: "What command should be run to run tests?", //Needs answer
+    name: "npmtest",
+  },
+  {
+    type: "input",
+    message: "What does the user need to know about using the repo?",
+    name: "using",
+  },
+  {
+    type: "input",
+    message: "What does the user need to know about contributing to the repo?",
+    name: "contributing",
+  },
+  {
+    type: "input",
+    message: "What does the user need to know about contributing to the repo?",
+    name: "contributing",
+  },
+];
 
-// Function call to initialize app
-// init();
+inquirer.prompt(questions).then((answers) => {
+  const template = `
+ 
+# ${answers.project}
 
+## Description
+${answers.description}
 
+## Table of Contents
 
+## Installation
 
+## Usage
 
+## Contributing
 
+## Tests
 
-
-
-
-
-
-
-
-
-
-
+## Questions
 
 
 
 
 
 
+Github Username: ${answers.username}
+Email Address: ${answers.address}
+Project Name: ${answers.project}
+Project Description: ${answers.description}
+License: ${answers.license}
+Command to Install Dependencies: ${answers.npmi}
+Command to Run Tests: ${answers.npmtest}
+Using the Repo: ${answers.using}
+Contributing to the Repo: ${answers.contributing}
+`;
 
-
-
-
-// const inquirer = require('inquirer');
-// const fs = require("fs")
-//   let questions = [
-   
-//     {
-//       type: 'input',
-//       message: 'How many bones are in the adult human body?',
-//       name: 'bones',
-//     },
-    
-//   ]
-  
-
-
-
-//   inquirer.prompt(questions).then((answers) => {
-//     console.log(answers);
-//     if(answers.bones == 206){
-//       console.log("Correct!")
-//     }else {
-//       console.log("Incorrect!")
-//     } 
-//     let text = "# How many bones?"
-//     text += `\nAnswer: ${answers.bones}`
-//     console.log(text)
-//     fs.writeFile('readme.md', text, (err) =>
-//   err ? console.error(err) : console.log('Success!')
-// );
-// });
-
-
-
-  inquirer.prompt(questions).then((answers) => {
-    console.log(answers);
-    if(answers.bones == 206){
-      console.log("Correct!")
-    }else {
-      console.log("Incorrect!")
-    } 
-    let text = "# How many bones?"
-    text += `\nAnswer: ${answers.bones}`
-    console.log(text)
-    fs.writeFile('readme.md', text, (err) =>
-  err ? console.error(err) : console.log('Success!')
-);
+  fs.writeFile("./README.md", template, () => {
+    console.log("Generating README...");
   });
+});
