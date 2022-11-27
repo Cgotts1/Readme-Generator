@@ -52,17 +52,11 @@ const questions = [
     message: "What does the user need to know about contributing to the repo?",
     name: "contributing",
   },
-  {
-    type: "input",
-    message: "What does the user need to know about contributing to the repo?",
-    name: "contributing",
-  },
 ];
 
 inquirer.prompt(questions).then((answers) => {
-  const template = `
- 
-# ${answers.project}
+  const template = 
+`# ${answers.project}
 
 ## Description
 ${answers.description}
@@ -70,32 +64,39 @@ ${answers.description}
 ## Table of Contents
 
 ## Installation
+Command to Install Dependencies: ${answers.npmi}
 
 ## Usage
+Using the Repo: ${answers.using}
 
 ## Contributing
+Contributing to the Repo: ${answers.contributing}
 
 ## Tests
+Command to Run Tests: ${answers.npmtest}
 
 ## Questions
-
-
-
-
-
-
+If you have any questions, please feel free to contact me:
 Github Username: ${answers.username}
-Email Address: ${answers.address}
-Project Name: ${answers.project}
-Project Description: ${answers.description}
-License: ${answers.license}
-Command to Install Dependencies: ${answers.npmi}
-Command to Run Tests: ${answers.npmtest}
-Using the Repo: ${answers.using}
-Contributing to the Repo: ${answers.contributing}
-`;
+Email Address: ${answers.address}`;
 
   fs.writeFile("./README.md", template, () => {
     console.log("Generating README...");
   });
 });
+
+
+
+
+
+
+
+// Github Username: ${answers.username}
+// Email Address: ${answers.address}
+// Project Name: ${answers.project}
+// Project Description: ${answers.description}
+// License: ${answers.license}
+// Command to Install Dependencies: ${answers.npmi}
+// Command to Run Tests: ${answers.npmtest}
+// Using the Repo: ${answers.using}
+// Contributing to the Repo: ${answers.contributing}
