@@ -62,12 +62,12 @@ inquirer.prompt(questions).then((answers) => {
 ${answers.description}
 
 ## Table of Contents
-<a href = "#Installation">Installation</a>
-<a href = "#Description">Description</a>
-<a href = "#Usage">Usage</a>
-<a href = "#Contributing">Contributing</a>
-<a href = "#Tests">Tests</a>
-<a href = "#Questions">Questions</a>
+1.) <a href = "#Installation">Installation</a> <br>
+2.) <a href = "#Description">Description</a><br>
+3.) <a href = "#Usage">Usage</a><br>
+4.) <a href = "#Contributing">Contributing</a><br>
+5.) <a href = "#Tests">Tests</a><br>
+6.) <a href = "#Questions">Questions</a>
 
 
 ## Installation <section id = "Installation"></section>
