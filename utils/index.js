@@ -99,19 +99,3 @@ If you have any questions, please feel free to contact me: <br><br>
     console.log("Generating README...");
   });
 });
-
-
-
-
-
-
-
-// Github Username: ${answers.username}
-// Email Address: ${answers.address}
-// Project Name: ${answers.project}
-// Project Description: ${answers.description}
-// License: ${answers.license}
-// Command to Install Dependencies: ${answers.npmi}
-// Command to Run Tests: ${answers.npmtest}
-// Using the Repo: ${answers.using}
-// Contributing to the Repo: ${answers.contributing}
