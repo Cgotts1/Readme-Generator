@@ -1,10 +1,10 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 
-// const getFile = require('./generateMarkdown')
+// Gets the generateMarkdown file and the functions within it
+const {renderLicenseBadge, renderLicenseLink} = require('./generateMarkdown')
 
-// getFile
-
+// Series of questions that will be shown in the terminal after running node
 const questions = [
   {
     type: "input",
@@ -36,11 +36,13 @@ const questions = [
     type: "input",
     message: "What command should be run to install dependencies?", 
     name: "npmi",
+    default: "npm i",
   },
   {
     type: "input",
     message: "What command should be run to run tests?", 
     name: "npmtest",
+    default: "npm test",
   },
   {
     type: "input",
@@ -54,41 +56,45 @@ const questions = [
   },
 ];
 
-
-
+// Enables prompting of questions and takes in users input
 inquirer.prompt(questions).then((answers) => {
   const template = 
 `# ${answers.project}
 
-## Description
+## <section id = "License">License</section>
+${renderLicenseBadge(answers.license)} <br>
+${renderLicenseLink(answers.license)}
+
+## <section id = "Description">Description</section>
 ${answers.description}
 
 ## Table of Contents
-1.) <a href = "#Description">Description</a><br>
-2.) <a href = "#Installation">Installation</a> <br>
-3.) <a href = "#Usage">Usage</a><br>
-4.) <a href = "#Contributing">Contributing</a><br>
-5.) <a href = "#Tests">Tests</a><br>
-6.) <a href = "#Questions">Questions</a>
+1.) <a href = "#License">License</a><br>
+2.) <a href = "#Description">Description</a><br>
+3.) <a href = "#Installation">Installation</a> <br>
+4.) <a href = "#Usage">Usage</a><br>
+5.) <a href = "#Contributing">Contributing</a><br>
+6.) <a href = "#Tests">Tests</a><br>
+7.) <a href = "#Questions">Questions</a>
 
-
-## Installation <section id = "Installation"></section>
+## <section id = "Installation">Installation</section>
 Command to Install Dependencies: ${answers.npmi}
 
-## Usage <section id = "Usage"></section>
+## <section id = "Usage">Usage</section>
 Using the Repo: ${answers.using}
 
-## Contributing
+## <section id = "Contributing">Contributing</section>
 Contributing to the Repo: ${answers.contributing}
 
-## Tests
+## <section id = "Tests">Tests</section>
 Command to Run Tests: ${answers.npmtest}
 
-## Questions  <section id = "Questions"></section>
+## <section id = "Questions">Questions</section>
 If you have any questions, please feel free to contact me: <br><br>
 1.) Github Username: ${answers.username} <br>
 2.) Email Address: ${answers.address}`;
 
+// Outputs readme file
   fs.writeFile("./README.md", template, () => {
     console.log("Generating README...");
   });
