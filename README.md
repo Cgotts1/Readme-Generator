@@ -6,6 +6,10 @@ N/A
 ## <section id = "Description">Description</section>
 This project was made using node.js and allows users to quickly generate a readme file. Once a user initiates node in their terminal on index.js, a series of questions will appear asking them for their Github Username, email address, project name, project description, licenses, install/test commands, fyi, and how to make contributions. After finishing the series of questions, a readme file will be generated in markdown language. The main portions of this readme were generated using the README Generator.
 
+![Node Questions](./image/nodequestions.png)
+
+Link to video demonstration: https://drive.google.com/file/d/1nTql6j8v9ov0MurceNV8lzc9ybklxvvY/view
+
 ## Table of Contents
 1.) <a href = "#License">License</a><br>
 2.) <a href = "#Description">Description</a><br>
